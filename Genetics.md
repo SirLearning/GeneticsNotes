@@ -92,4 +92,4 @@
  - large gene pool indicates extensive genetic diversity, causes an increase in the fitness of organisms
 渗入 (introgression / introgressive hybridization): the transfer of genetic material from one species into the gene pool
 genetic variants
- - genetic drift: the change in the frequency of an existing gene variant (allele) in a population due to random chance 
+ - genetic drift: the change in the frequency of an existing gene variant (allele) in a population due to random chance
