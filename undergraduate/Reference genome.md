@@ -59,4 +59,3 @@ models for the evolution of polyploid wheats
  4. transform:
 	 - *T. spelta* -> *T. vulgare*
 	 - *T. vulgare* with cultivated emmer -> *T. spelta*
-
