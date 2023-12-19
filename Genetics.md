@@ -93,3 +93,16 @@
 渗入 (introgression / introgressive hybridization): the transfer of genetic material from one species into the gene pool
 genetic variants
  - genetic drift: the change in the frequency of an existing gene variant (allele) in a population due to random chance
+## 生物分类
+
+界（Kingdom）、门（Phylum）、纲（Class）、目（Order）、科（Family）、属（Genus）、种（Species）
+
+双名法：瑞典植物学家[林奈](https://www.zhihu.com/search?q=%E6%9E%97%E5%A5%88&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A30890345%7D)（Carl Linnaeus）发明
+1. 属名 genus epithet（斜体，首字母大写）
+2. 种加词 species epithet（斜体，全部字母小写）
+3. 种命名人名字（正体，首字母大写）
+4. 特殊符号：
+	 - sp.表示属下面的某个不确定的种，比如： _Canis_ sp.表示犬属下的某个不确定的种；
+	 - spp.表示属下面的多个不确定的种，比如：_Canis_ spp.表示犬属下的多个不确定的种；
+	 - subsp.或ssp.表示一个亚种，比如： _Beta vulgaris_ ssp.表示甜菜的某一亚种；
+	 - subspp.或sspp.表示多个亚种，比如：_Paramisgurnus dabryanus_ ssp. 表示大鳞副泥鳅的多个亚种。
