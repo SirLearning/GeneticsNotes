@@ -86,6 +86,12 @@
 5. Population genetics
 # Classical Genetics
 
+# Molecular Genetics
+
+genome:
+- silencing element
+- silencer: 一段能够结合转录调节因子的DNA序列
+
 # Population Genetics
 基因池 (gene pool): the set of all genes, or genetic information, in any population, usually of a particular species
  - large gene pool indicates extensive genetic diversity, causes an increase in the fitness of organisms
