@@ -5,7 +5,6 @@
 - the human genome project
 
 学科内容：
-
 1. classical genetics: 
 	1. cellular reproduction: cell basis
 		 - 细胞周期/染色体周期、细胞分裂、减数分裂 (Mitosis, Meiosis)
@@ -106,3 +105,8 @@ genetic variants
 	 - spp.表示属下面的多个不确定的种，比如：_Canis_ spp.表示犬属下的多个不确定的种；
 	 - subsp.或ssp.表示一个亚种，比如： _Beta vulgaris_ ssp.表示甜菜的某一亚种；
 	 - subspp.或sspp.表示多个亚种，比如：_Paramisgurnus dabryanus_ ssp. 表示大鳞副泥鳅的多个亚种。
+
+植物检索表
+- 法国博物学家拉马克 (Lamarck)：二歧分类原则
+- 主要三类：分科、分属、分种
+
