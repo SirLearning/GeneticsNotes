@@ -55,3 +55,33 @@ types:
 | T3       |     |     |     |     |
 | ...      |     |     |     |     |
 
+# Practice
+
+## data preparing
+
+conda problem:
+1. mamba can not work
+	1. figure out in the file: failed
+2. uninstall conda and memba
+
+research
+1. reviews of transposable element and tools to discover them
+
+## discovery an annotation of TE in genomes
+
+categories:
+- *de novo*
+- Structure
+- Comparative Genomic
+- Homology-based
+
+BLAT
+Censor
+LTR Finder
+PILER
+Repeat Masker
+
+二代测序：原理、reads长度、文件存储数据、二代分析测序流程
+- 长度为几百bp：限制条件，也因此必须了解目标序列（转座子）的长度
+
+群体分型 (population stratification)：是GWAS

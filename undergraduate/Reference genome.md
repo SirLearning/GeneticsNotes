@@ -1,15 +1,19 @@
 # Wheats Domestication
 ## Geography and Timeline
+
 human sedentary, agriculture-based society
  - time: 12,000 years ago
  - original location: Karacadag (KD), Fertile Crescent. Near East
 	 - cold rainy winters and dry summers
+
 historical samples: carbon isotope <sup>14</sup>C
  - <sup>14</sup>C content
  - continuous dendrochronological series (tree ring): calibrate
  - calibrated years before the present (cal BP)
 ## Genetics
+
 Phenotype: wild vs domesticated
+
 experimental methods:
  1. molecular markers: through PCR
 	 1. restriction-fragment length polymorphisms (RFLPs)
@@ -24,6 +28,7 @@ experimental methods:
 	 2. study the complicated genetics of polyploid species: 
 		 1. nllisomic, monosomic, otherwise aneuploid lines
 		 2. substitution lines for classical marker segregation analyses
+
 Polyploidy: variation in ploidy, wheat
  - integer: basic chromosome number of 7
  - chromosome complement: genetically redundant
@@ -32,6 +37,7 @@ Polyploidy: variation in ploidy, wheat
 	 - autopolypoidy: gametes from the same species make a zygote
 	 - allopolypoidy: gametes from the different but interfertile species make a zygote
 	 - cyto-basis: multivalents during meiosis, *Pairing homoeologous (Ph1)* gene on chromosome 5B
+
 Wheat species:
  - AA:
 	 - *T. monococcum* L. ssp.
@@ -50,7 +56,8 @@ Wheat species:
 	 - *T. aestivum* L. ssp. 
 		 - *spelta*: *T. spelta* (spelt)
 		 - *vulgare* Host: *T. vulgare* (bread wheat)
-models for the evolution of polyploid wheats
+
+Models for the evolution of polyploid wheats
  1. wild emmer -> cultivated emmer
  2. cultivated emmer -> *T. durum* & *T. turgidum* (*T. parvicoccum*)
  3. with wild *Ae. tauschii*
@@ -59,18 +66,25 @@ models for the evolution of polyploid wheats
  4. transform:
 	 - *T. spelta* -> *T. vulgare*
 	 - *T. vulgare* with cultivated emmer -> *T. spelta*
+
 ## Time
+
 domestication: the process of 
  - the process along with wheat's development
+
 cultivation: deliberate planting and harvesting of whether wild or domesticated form
+
 # Reference genome
+
 ## Why reference
+
 The genome has the sequence of the whole specie's genetic information. But why we should put a reference genome as a reference?
  - For technology: 
 	 - different sequences have sequenced by different sequencing technology, the most precise one is the reference
 	 - no, the chinese spring didn't have a great result 
  - For alignment anchor: alignment sequences from different genome needs one as the basic anchor to decide whether there is a change or not
 ## Genome
+
 *Triticum urartu*: used for polyploid wheat genome study
  - aims:
 	 - structure
