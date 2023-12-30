@@ -67,7 +67,7 @@ conda problem:
 research
 1. reviews of transposable element and tools to discover them
 
-## discovery an annotation of TE in genomes
+## TE detection in genomes
 
 categories:
 - *de novo*
@@ -75,13 +75,24 @@ categories:
 - Comparative Genomic
 - Homology-based
 
-BLAT
-Censor
-LTR Finder
-PILER
-Repeat Masker
+detection tools:
+- BLAT
+- Censor
+- LTR Finder
+- PILER
+- Repeat Masker
+- INSurVeyor
+- RepeatModeler2
+- TIR-Learner
+
+## reads mapping
 
 二代测序：原理、reads长度、文件存储数据、二代分析测序流程
 - 长度为几百bp：限制条件，也因此必须了解目标序列（转座子）的长度
 
-群体分型 (population stratification)：是GWAS
+将reads比对到基因组上的工具：bwa (bowtie2, or else)
+
+## Population
+
+群体分型 (population stratification)：是GWAS等方式的基础
+
