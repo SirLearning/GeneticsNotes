@@ -116,3 +116,30 @@ genetic variants
 - 法国博物学家拉马克 (Lamarck)：二歧分类原则
 - 主要三类：分科、分属、分种
 
+叶绿体 (chloroplast)
+
+染色体：
+- 中心粒 (centromere)
+	- pericentromere
+- 生殖细胞系 (germline)
+- 单倍型 (haplotype)
+- synteny
+
+单性结实 (parthenocarpy)
+
+种质 (germplasm)
+
+## 图谱
+
+遗传图谱 (genetic map)：以重组节点为单位的（基因）定位方式
+
+物理图谱 (physic map)：以单个碱基为单位的定位方式
+
+## 同源参数
+
+血缘同源 (identity by descent, IBD)：子代中共有的等位基因来源于同一祖先
+
+状态同源 (identical by state, IBS)：两个个体拥有相同的等位基因（不一定来源于同一祖先）
+
+## 变异有害性预测工具
+

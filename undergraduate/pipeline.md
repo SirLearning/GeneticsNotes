@@ -46,6 +46,11 @@ types:
 2. random selection: 10,000 reads
 3. TE, blast
 
+Vmap 2 数据包括：
+- vcf文件：只包含了SNP位点/片段的reads比对到reference上
+	- 也就是每个样本相对于reference的突变性
+- bam文件：reads比对到reference上
+
 ## TE library
 
 | TE\Wheat | a1  | a2  | a3  | ... |
@@ -236,6 +241,8 @@ for category, count in category_counts.items():
 ```
 2. `python de.py > tte.gff3`
 3. `grep -E -o 'DTA|DTB|DTC|DTE|DTH|DTM|DTP|DTR|DTT|DTX|DYC|DHH|DMM|DXX|RLC|RLG|RLB|RLR|RLE|RLX|RYD|RYN|RYV|RPP|RIR|RIT|RIJ|RIL|RII|RIX|RST|RSL|RSS|RSX|RXX|XXX' tte.gff3 | sort -u > check.gff3`
+
+analysis by perl code
 
 ## reads mapping
 
