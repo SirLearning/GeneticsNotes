@@ -107,10 +107,11 @@ genetic variants
 2. 种加词 species epithet（斜体，全部字母小写）
 3. 种命名人名字（正体，首字母大写）
 4. 特殊符号：
-	 - sp.表示属下面的某个不确定的种，比如： _Canis_ sp.表示犬属下的某个不确定的种；
-	 - spp.表示属下面的多个不确定的种，比如：_Canis_ spp.表示犬属下的多个不确定的种；
-	 - subsp.或ssp.表示一个亚种，比如： _Beta vulgaris_ ssp.表示甜菜的某一亚种；
-	 - subspp.或sspp.表示多个亚种，比如：_Paramisgurnus dabryanus_ ssp. 表示大鳞副泥鳅的多个亚种。
+	 - sp. 表示属下面的某个不确定的种，比如： _Canis_ sp.表示犬属下的某个不确定的种；
+	 - spp. 表示属下面的多个不确定的种，比如：_Canis_ spp.表示犬属下的多个不确定的种；
+	 - subsp.或ssp. 表示一个亚种，比如： _Beta vulgaris_ ssp.表示甜菜的某一亚种；
+	 - subspp.或sspp. 表示多个亚种，比如：_Paramisgurnus dabryanus_ ssp. 表示大鳞副泥鳅的多个亚种；
+	 - cv. 栽培变种 (cultivarietas) 缩写
 
 植物检索表
 - 法国博物学家拉马克 (Lamarck)：二歧分类原则

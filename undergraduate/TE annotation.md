@@ -30,3 +30,6 @@ The Extensive _de novo_ TE Annotator (EDTA)
 # Centromeres sequence analysis
 
 Supplementary Table10: The position of centromeres on chromosomes
+
+there is a saying that LTR retroTE may play a important role in the evolution of plant genome size
+- polyploidy: maybe some factor of genome was diluted and its relgularly distribute on the genome in a rule, or, its a gene that have been discovered
