@@ -194,6 +194,7 @@ cat iwgsc_refseqv1.0_TransposableElements_2017Mar13.gff3 | grep -w 'chr1A' > chr
 seqkit grep -p 1 abd_iwgscV1.fa -o chr1A/chr1A1.fa
 
 seqkit stats 
+
 ```
 
 序列合并工具：Seqtk v1.4
