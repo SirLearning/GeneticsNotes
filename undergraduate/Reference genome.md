@@ -83,6 +83,7 @@ The genome has the sequence of the whole specie's genetic information. But why w
 	 - different sequences have sequenced by different sequencing technology, the most precise one is the reference
 	 - no, the chinese spring didn't have a great result 
  - For alignment anchor: alignment sequences from different genome needs one as the basic anchor to decide whether there is a change or not
+
 ## Genome
 
 *Triticum urartu*: used for polyploid wheat genome study
