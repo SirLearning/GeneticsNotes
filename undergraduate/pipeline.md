@@ -79,6 +79,13 @@ research
 reference genome:
 - Chinese Spring
 
+## TE database
+
+Dfam: repetitive families
+
+Repbase
+
+
 ## TE detection in reference genomes
 
 categories:
@@ -259,4 +266,7 @@ analysis by perl code
 
 后面再学习，先将现在的工作做好
 
-DTA|DTB|DTC|DTE|DTH|DTM|DTP|DTR|DTT|DTX|DYC|DHH|DMM|DXX|RLC|RLG|RLB|RLR|RLE|RLX|RYD|RYN|RYV|RPP|RIR|RIT|RIJ|RIL|RII|RIX|RST|RSL|RSS|RSX|RXX|XXX
+# Software
+
+## EDTA
+
