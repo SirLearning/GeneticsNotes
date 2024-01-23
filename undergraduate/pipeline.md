@@ -1,43 +1,14 @@
-# Basic
-
-## reference genome:
-
-Wheat species:
- - AA:
-	 - *T. monococcum* L. ssp.
-		 - *boeoticum* Boiss. : *T. boeoticum* (wild einkorn)
-		 - *monococcum*: *T. monococcum* (cultivated einkorn)
-	 - *T. urartu* Tuman. : *T. urartu* (wild *T. urartu*)
- - DD:
-	 - *Ae. tauschii* Coss. : *Ae. tauschii* (wild *Ae. Tauschii*)
- - AABB:
-	 - *T. turgidum* L. ssp.
-		 - *dicoccoides* Aschers: *T. dicoccoides* (wild emmer)
-		 - *dicoccum* Schubl. : *T. dicoccum* (cultivated emmer)
-		 - *durum* Desf. : *T. durum* (hard wheat)
-		 - *parvicoccum* Kislev: *T. parvicoccum* (*T. parvicoccum*, archaeobotanical)
- - AABBDD:
-	 - *T. aestivum* L. ssp. 
-		 - *spelta*: *T. spelta* (spelt)
-		 - *vulgare* Host: *T. vulgare* (bread wheat)
+# Plan
 
 ![[GeneticsNotes/undergraduate/Data.xlsx]]
 
-models for the evolution of polyploid wheats
- 1. wild emmer -> cultivated emmer
- 2. cultivated emmer -> *T. durum* & *T. turgidum* (*T. parvicoccum*)
- 3. with wild *Ae. tauschii*
-	 - cultivated emmer -> *T. spelta*
-	 - *T. durum* & *T. parvicoccum* -> *T. vulgare*
- 4. transform:
-	 - *T. spelta* -> *T. vulgare*
-	 - *T. vulgare* with cultivated emmer -> *T. spelta*
+## TE detect
 
-## Transposable Element (TE)
+TE library: the reliable TE and sequence for one species
+- existing manual curative TE library: the proved reliable TE library
+	- the basis of TE detect tools
 
-types:
-- DNA (mite, etc)
-- LTR (gypsy, etc)
+
 
 ## re-sequencing data: Vmap 2
 
@@ -51,19 +22,6 @@ Vmap 2 数据包括：
 	- 也就是每个样本相对于reference的突变性
 - bam文件：reads比对到reference上
 
-## TE library
-
-| TE\Wheat | a1  | a2  | a3  | ... |
-| -------- | --- | --- | --- | --- |
-| T1       |     |     |     |     |
-| T2       |     |     |     |     |
-| T3       |     |     |     |     |
-| ...      |     |     |     |     |
-
-# Reference
-
-
-
 # Practice
 
 ## data preparing
@@ -76,15 +34,13 @@ conda problem:
 research
 1. reviews of transposable element and tools to discover them
 
-reference genome:
-- Chinese Spring
+## TE library
 
-## TE database
+TREP
 
 Dfam: repetitive families
 
 Repbase
-
 
 ## TE detection in reference genomes
 
