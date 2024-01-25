@@ -8,7 +8,15 @@ TE library: the reliable TE and sequence for one species
 - existing manual curative TE library: the proved reliable TE library
 	- the basis of TE detect tools
 
+repbase 2018 github
 
+时间长：
+- 只测chr1A/B/D
+	- 也可以先做个比对，看有没有大的区别
+- 将染色体切开，切成不同段的，从而实现多线程（丢弃一部分的断点数据）
+
+用长reads，有空间位点的信息，可以直接检测
+- 长reads的检测工具
 
 ## re-sequencing data: Vmap 2
 

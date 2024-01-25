@@ -81,3 +81,32 @@ Supplementary Table10: The position of centromeres on chromosomes
 
 there is a saying that LTR retroTE may play a important role in the evolution of plant genome size
 - polyploidy: maybe some factor of genome was diluted and its relgularly distribute on the genome in a rule, or, its a gene that have been discovered
+
+- sensitivity 敏感性 TP
+    - $P(positive|target) = \frac{TP}{TP+FN}$
+        
+- specificity 具体性 FP
+    
+    - $P(negative|non\_target) = \frac{TN}{TN+FP}$
+        
+    - negative part in all the not discovered, means when it gets higher the not discover positive get less
+        
+- accuracy 准确性 T
+    
+    - $P(true\_classification) = \frac{TP+TN}{TP+TN+FP+FN}$
+        
+    - 正确率
+        
+- precision 精确性 TP
+    
+    - $P(target|positive) = \frac{TP}{TP+FP}$
+        
+    - discovered positive in all positive
+        
+- FDR (false discover rate) FP
+    
+    - $P(non\_target|positive)=\frac{FP}{TP+FP}$
+        
+    - not all the positive was discovered
+        
+- $F_1=\frac{2\times Sensitivity \times Precision}{Sensitivity+Precision}=\frac{2TP}{2TP+FP+FN}$
