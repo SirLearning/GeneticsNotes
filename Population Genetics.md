@@ -12,4 +12,6 @@ Content:
 7. molecular population genetics
 8. evolutionary quanttative genetics
 9. population genomics
-10. human population genetics`
+10. human population genetics
+
+公式：$\theta = 4 N_{e} \mu$

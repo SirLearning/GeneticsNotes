@@ -93,11 +93,18 @@ genome:
 - silencer: 一段能够结合转录调节因子的DNA序列
 
 # Population Genetics
+
 基因池 (gene pool): the set of all genes, or genetic information, in any population, usually of a particular species
  - large gene pool indicates extensive genetic diversity, causes an increase in the fitness of organisms
+
 渗入 (introgression / introgressive hybridization): the transfer of genetic material from one species into the gene pool
+
 genetic variants
  - genetic drift: the change in the frequency of an existing gene variant (allele) in a population due to random chance
+
+单倍型 (haplotype)
+- 单倍群群体遗传学 (haplogroup)
+
 ## 生物分类
 
 界（Kingdom）、门（Phylum）、纲（Class）、目（Order）、科（Family）、属（Genus）、种（Species）
@@ -129,6 +136,26 @@ genetic variants
 单性结实 (parthenocarpy)
 
 种质 (germplasm)
+
+植物拉丁文名：
+- grape: *Vitis vinfera*
+- 高粱: *Sorghum bicolor*
+- potato: *Solanum tuberosum*
+- 毛果杨: *Populus trichocarpa*
+- 小立碗藓: *Physcomitrium patens*
+- 水稻: *Oryza sativa*
+- 蒺藜状苜蓿: *Medicago truncatula*
+- 大豆: *Glycine max*
+- 二穗短柄草: *Brachypodium distachyon*
+
+小麦族 (Triticeae)
+- 狭义：嵌在雀麦族 (Bromeae)
+	- 重要谷物：小麦、大麦、黑麦
+	- 牧草
+	- 小麦属 (Triticum) 
+	- 山羊草属 (Aegilops)
+	- 广义披碱草属 (Elymus)
+- 广义：
 
 ## 图谱
 
