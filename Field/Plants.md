@@ -1,5 +1,7 @@
-# Wheats Domestication
-## Geography and Timeline
+# Wheat
+
+## Domestication
+### Geography and Timeline
 
 human sedentary, agriculture-based society
  - time: 12,000 years ago
@@ -10,7 +12,13 @@ historical samples: carbon isotope <sup>14</sup>C
  - <sup>14</sup>C content
  - continuous dendrochronological series (tree ring): calibrate
  - calibrated years before the present (cal BP)
-## Genetics
+
+Time
+- domestication: the process of 
+	- the process along with wheat's development
+- cultivation: deliberate planting and harvesting of whether wild or domesticated form
+
+### Genetics
 
 Phenotype: wild vs domesticated
 
@@ -38,7 +46,9 @@ Polyploidy: variation in ploidy, wheat
 	 - allopolypoidy: gametes from the different but interfertile species make a zygote
 	 - cyto-basis: multivalents during meiosis, *Pairing homoeologous (Ph1)* gene on chromosome 5B
 
-Wheat species:
+## Wheat species:
+
+by chromosome:
  - AA:
 	 - *T. monococcum* L. ssp.
 		 - *boeoticum* Boiss. : *T. boeoticum* (wild einkorn)
@@ -67,25 +77,6 @@ Models for the evolution of polyploid wheats
 	 - *T. spelta* -> *T. vulgare*
 	 - *T. vulgare* with cultivated emmer -> *T. spelta*
 
-## Time
-
-domestication: the process of 
- - the process along with wheat's development
-
-cultivation: deliberate planting and harvesting of whether wild or domesticated form
-
-# Reference genome
-
-## Why reference
-
-The genome has the sequence of the whole specie's genetic information. But why we should put a reference genome as a reference?
- - For technology: 
-	 - different sequences have sequenced by different sequencing technology, the most precise one is the reference
-	 - no, the chinese spring didn't have a great result 
- - For alignment anchor: alignment sequences from different genome needs one as the basic anchor to decide whether there is a change or not
-
-## Genome
-
 *Triticum urartu*: used for polyploid wheat genome study
  - aims:
 	 - structure
@@ -95,3 +86,7 @@ The genome has the sequence of the whole specie's genetic information. But why w
 	 - bacterial artificial chromosome (BAC)-by-BAC sequencing
 	 - single molecule real-time whole-genome shotgun sequencing
 	 - linked reads and optical mapping
+
+# Maize
+
+

@@ -94,6 +94,26 @@ genome:
 
 # Population Genetics
 
+Content:
+1. genetic and phenotypic variation
+2. organization of genetic variation
+3. random genetc drift
+4. mutation and the neutral theory
+5. Darwinian selection
+6. population
+	1. inbreeding
+	2. population subdivision
+	3. migration
+		- load
+7. molecular population genetics
+8. evolutionary quanttative genetics
+9. population genomics
+10. human population genetics
+
+公式：$\theta = 4 N_{e} \mu$
+
+## Terminology
+
 基因池 (gene pool): the set of all genes, or genetic information, in any population, usually of a particular species
  - large gene pool indicates extensive genetic diversity, causes an increase in the fitness of organisms
 
@@ -104,6 +124,8 @@ genetic variants
 
 单倍型 (haplotype)
 - 单倍群群体遗传学 (haplogroup)
+
+群体分型 (population stratification)：是GWAS等方式的基础
 
 ## 生物分类
 
