@@ -20,6 +20,9 @@ Why reference: The genome has the sequence of the whole specie's genetic informa
 	- no, the chinese spring didn't have a great result 
 - For alignment anchor: alignment sequences from different genome needs one as the basic anchor to decide whether there is a change or not
 
+当前只用找到这个地步，先把一个abd的跑通再说其他种类的小麦
+长读段同样，目前123的数据足以使用
+
 ## TE library (data 2)
 
 TE library: the reliable TE and sequence for one species
@@ -27,8 +30,9 @@ TE library: the reliable TE and sequence for one species
 	- TREP
 	- Dfam: repetitive families
 	- Repbase: repbase 2018 (github)
+- how to build curated library: "A beginner’s guide to manual curation of transposable elements"
 
-## TE detection in reference genomes (data 3)
+## TE detection (data 3)
 
 categories:
 - *de novo*
