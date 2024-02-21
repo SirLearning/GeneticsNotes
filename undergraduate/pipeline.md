@@ -4,11 +4,6 @@
 ![[Presentation.pptx]]
 # TE detect
 
-时间长：
-- 只测chr1A/B/D
-	- 也可以先做个比对，看有没有大的区别
-- 将染色体切开，切成不同段的，从而实现多线程（丢弃一部分的断点数据）
-
 用长reads，有空间位点的信息，可以直接检测
 - 长reads的检测工具
 
@@ -22,6 +17,8 @@ Why reference: The genome has the sequence of the whole specie's genetic informa
 
 当前只用找到这个地步，先把一个abd的跑通再说其他种类的小麦
 长读段同样，目前123的数据足以使用
+
+由于abd的长度很长，选择其中的chr1A的一小段
 
 ## TE library (data 2)
 
@@ -109,6 +106,16 @@ for category, count in category_counts.items():
 analysis by perl code0
 
 ### EDTA
+
+首先测试软件的时间较长，单是chr1A的就跑了一周：
+- 只测chr1A/B/D
+	- 也可以先做个比对，看有没有大的区别
+- 将染色体切开，切成不同段的，从而实现多线程（丢弃一部分的断点数据）
+	- 切成1Mbp的片段：速度提升很多
+		- 最终结果是xxx，没有检测到真正有用的TE
+	- 将gap也就是fa中显示N的片段作为切割处
+		- cut_chr1A.sh
+
 
 ## library built (data 4)
 
