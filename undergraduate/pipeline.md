@@ -116,10 +116,44 @@ analysis by perl code0
 	- 将gap也就是fa中显示N的片段作为切割处
 		- cut_chr1A.sh
 
+测试chr1A1M，结果：
+- 线程：10
+- 时间：8min
+	- LTR: 1min
+- 问题：
+	- `Warning: LOC list chr1A1M.fa.mod.ltrTE.veryfalse is empty.`
+		- 是在`Identify LTR retrotransposon candidates from scratch.`时产生的
+	- `Species: others`：应当调节成小麦特定的检测方式
+		- 物种特定的curated library
+	- `-WARNING- Grid computing is not available because DRMAA not configured properly: Could not find drmaa library.  Please specify its full path using the environment variable DRMAA_LIBRARY_PATH`
+		- 配置问题：
+			- 是否安装DRMAA
+			- 如何配置
+	- `/data1/home/dazheng/miniconda3/envs/EDTA/lib/python3.6/site-packages/Bio/Seq.py:2338: BiopythonWarning: Partial codon, len(sequence) not a multiple of three. Explicitly trim the sequence or add trailing N before translation. This may become an error in future.  BiopythonWarning,`
+		- 可能是Partial condon本身的问题，其中说的N，或许对检测结果有影响
+	- `Unspecified/NA not found in the TE_SO database, it will not be used to rename sequences in the final annotation.`：无法找到的TE类型
+		- 总共有50条
+		- 是在导入`trep-db_complete_Rel-19.fasta`时发生的
+			- trep-db有4126条：其中也找不到`Unspecified/NA'
+		- TE_SO database：在TE_Sequence_Ontology.txt文件中，找到总共有记录的为87条
+
+测试chr1AN：
+- 切割后统计数据：
+	- 片段数：20243
+	- 平均长度：28932 << 1000000
+		- 如果将片段平均长度改到大概1000000，有200个片段
+		- 1M8min：$8\times200/60$，为27h，相比于原本7d也算是可以了
+- 线程：25
+- 时间：预估16h
+	- LTR: 2h
+
+测试chr1ANM：
+- 切割后统计数据：
+	- 片段数：242
+	- 平均长度：2.45M
+		- 1M8min：$8\times 2.5\times 242/60$，为80h
 
 ## library built (data 4)
-
-
 
 # Population analysis
 
@@ -145,7 +179,5 @@ Vmap 2 数据包括：
 - fastq文件
 
 ## Population
-
-
 
 后面再学习，先将现在的工作做好
