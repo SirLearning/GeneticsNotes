@@ -1,5 +1,9 @@
 # Wheat
 
+## Phenotype
+
+Glume
+
 ## Domestication
 ### Geography and Timeline
 

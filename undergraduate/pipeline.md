@@ -107,6 +107,9 @@ analysis by perl code0
 
 ### EDTA
 
+工作流程：
+![[Pasted image 20240225143508.png|850]]
+
 首先测试软件的时间较长，单是chr1A的就跑了一周：
 - 只测chr1A/B/D
 	- 也可以先做个比对，看有没有大的区别
@@ -152,6 +155,8 @@ analysis by perl code0
 	- 片段数：242
 	- 平均长度：2.45M
 		- 1M8min：$8\times 2.5\times 242/60$，为80h
+
+原本以为的一条染色体7d很长，其实还不算太长，可以只测chr1A, chr1B, chr1C三条染色体的TE
 
 ## library built (data 4)
 
