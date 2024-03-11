@@ -86,6 +86,13 @@
 5. Population genetics
 # Classical Genetics
 
+Maize (_Zea mays_) kernel pigmentation: central to elucidating fundamental genetic principles
+- correlated traits (Emerson, 1911)
+- variegation (Emerson, 1917)
+- allelic diversity (Anderson, 1924)
+- transposable elements (McClintock, 1949, 1950)
+- the original discovery of Mendel's laws and their rediscovery at the beginning of the 20th century (Mendel, 1950; Coe, 2001)
+
 # Molecular Genetics
 
 genome:
@@ -127,24 +134,14 @@ genetic variants
 
 群体分型 (population stratification)：是GWAS等方式的基础
 
-## 生物分类
+基因多效性 (pleiotropy)：一个基因可以影响与其无关的性状特征的现象，即可以由一个基因影响多个蛋白质的表达
 
-界（Kingdom）、门（Phylum）、纲（Class）、目（Order）、科（Family）、属（Genus）、种（Species）
+多态性 (polymorphism)：指一个物种的同一种群中存在两种或多种功能明显不同的表型
 
-双名法：瑞典植物学家[林奈](https://www.zhihu.com/search?q=%E6%9E%97%E5%A5%88&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A30890345%7D)（Carl Linnaeus）发明
-1. 属名 genus epithet（斜体，首字母大写）
-2. 种加词 species epithet（斜体，全部字母小写）
-3. 种命名人名字（正体，首字母大写）
-4. 特殊符号：
-	 - sp. 表示属下面的某个不确定的种，比如： _Canis_ sp.表示犬属下的某个不确定的种；
-	 - spp. 表示属下面的多个不确定的种，比如：_Canis_ spp.表示犬属下的多个不确定的种；
-	 - subsp.或ssp. 表示一个亚种，比如： _Beta vulgaris_ ssp.表示甜菜的某一亚种；
-	 - subspp.或sspp. 表示多个亚种，比如：_Paramisgurnus dabryanus_ ssp. 表示大鳞副泥鳅的多个亚种；
-	 - cv. 栽培变种 (cultivarietas) 缩写
+异位显性 (epistasis)：不同一个基因座上面非等位基因相互影响
+- the effect of a gene mutation is dependent on the presence or absence of mutations in one or more other genes
 
-植物检索表
-- 法国博物学家拉马克 (Lamarck)：二歧分类原则
-- 主要三类：分科、分属、分种
+系统发生学 (phylogenetics)：研究及推理生物个体或群体间演化史及关系的科学方法，属于系统分类学的一部分
 
 叶绿体 (chloroplast)
 
@@ -152,32 +149,24 @@ genetic variants
 - 中心粒 (centromere)
 	- pericentromere
 - 生殖细胞系 (germline)
-- 单倍型 (haplotype)
+- 单倍型 (haplotype)：倾向于一起遗传的基因组变异（SNP或等位基因）的物理分组，可以仅限于单个基因，也可以包括多个基因
 - synteny
 
 单性结实 (parthenocarpy)
 
-种质 (germplasm)
+癌基因 (oncogene)：致癌基因
 
-植物拉丁文名：
-- grape: *Vitis vinfera*
-- 高粱: *Sorghum bicolor*
-- potato: *Solanum tuberosum*
-- 毛果杨: *Populus trichocarpa*
-- 小立碗藓: *Physcomitrium patens*
-- 水稻: *Oryza sativa*
-- 蒺藜状苜蓿: *Medicago truncatula*
-- 大豆: *Glycine max*
-- 二穗短柄草: *Brachypodium distachyon*
+单亲二倍体 (Uniparantal Disomy, UPD)：是指个体的同源染色体或其上的一部分均来自双亲中一方而不携带另一方的拷贝，后者被称为片段单亲二倍体 (segmental UPD, partial isodisomy)
 
-小麦族 (Triticeae)
-- 狭义：嵌在雀麦族 (Bromeae)
-	- 重要谷物：小麦、大麦、黑麦
-	- 牧草
-	- 小麦属 (Triticum) 
-	- 山羊草属 (Aegilops)
-	- 广义披碱草属 (Elymus)
-- 广义：
+Variome: the whole set of genetic variations found in populations of species that have gone through a relatively short evolution change
+
+polygene: a member of a group of non-epistatic genes that interact additively to influence a phenotypic trait, thus contributing to multiple-gene inheritance, a type of non-Mendelian inheritance, as opposed to single-gene inheritance, which is the core notion of Mendelian inheritance
+
+## 公式
+
+Ka/Ks：在遗传学中，$K_a/K_s$或者$d_N/d_S$表示异义替换和同义替换之间的比例
+- 判断是否有选择压力作用于这个蛋白质编码基因
+- 通常在纯化选择的作用下，异义替换会在群体中被逐渐消灭
 
 ## 图谱
 
@@ -193,3 +182,4 @@ genetic variants
 
 ## 变异有害性预测工具
 
+今天为大家分享的文章题为：changing fitness effects of mutations through long-term bacterial evolution
