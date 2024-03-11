@@ -110,7 +110,7 @@ analysis by perl code0
 工作流程：
 ![[Pasted image 20240225143508.png|850]]
 
-首先测试软件的时间较长，单是chr1A的就跑了一周：
+测试01 chr1A：首先测试软件的时间较长，单是chr1A的就跑了一周
 - 只测chr1A/B/D
 	- 也可以先做个比对，看有没有大的区别
 - 将染色体切开，切成不同段的，从而实现多线程（丢弃一部分的断点数据）
@@ -119,7 +119,7 @@ analysis by perl code0
 	- 将gap也就是fa中显示N的片段作为切割处
 		- cut_chr1A.sh
 
-测试chr1A1M，结果：
+测试02 chr1A1M，结果：
 - 线程：10
 - 时间：8min
 	- LTR: 1min
@@ -139,8 +139,9 @@ analysis by perl code0
 		- 是在导入`trep-db_complete_Rel-19.fasta`时发生的
 			- trep-db有4126条：其中也找不到`Unspecified/NA'
 		- TE_SO database：在TE_Sequence_Ontology.txt文件中，找到总共有记录的为87条
+- step: finish
 
-测试chr1AN：
+测试03 chr1AN：
 - 切割后统计数据：
 	- 片段数：20243
 	- 平均长度：28932 << 1000000
@@ -149,12 +150,19 @@ analysis by perl code0
 - 线程：25
 - 时间：预估16h
 	- LTR: 2h
+- step: TIR
 
-测试chr1ANM：
+测试04 chr1ANM：
 - 切割后统计数据：
 	- 片段数：242
 	- 平均长度：2.45M
 		- 1M8min：$8\times 2.5\times 242/60$，为80h
+- step: annotation
+
+测试05 chr1A的raw库，chr1ANM序列
+- 速度较快，中间过程减少
+	- 主要看与上面的annotation有没有什么区别：04 & 05 raw库对比
+- step: finish
 
 原本以为的一条染色体7d很长，其实还不算太长，可以只测chr1A, chr1B, chr1C三条染色体的TE
 
