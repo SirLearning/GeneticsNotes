@@ -1,0 +1,25 @@
+# Journals
+
+[BMC Research Notes](https://bmcresnotes.biomedcentral.com/)：发布阴性数据
+[Mobile DNA](https://mobilednajournal.biomedcentral.com/)：转座子研究进展
+
+# Directions
+
+多倍体物种研究
+- 高质量基因组获得
+	- 异源多倍体
+	- 同源多倍体
+		- 通过对父本母本区分单倍型：Trio-binning、graph-binning
+		- HiFi+Hi-C技术区分单倍型
+		- 单细胞技术辅助分型：Bar-coding、Strand-seq
+- 多倍体基因组深入挖掘
+	- 基因组的差异——变异分析
+	- 不对称演化
+		- 选择压力
+		- 表达差异
+	- 起源与进化
+		- 祖先来源
+		- 演化历程
+	- 三维基因网络调控
+		- 同源/亚基因组间
+		- 祖先二倍体与多倍化

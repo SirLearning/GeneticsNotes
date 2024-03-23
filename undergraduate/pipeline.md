@@ -1,7 +1,25 @@
-# outside
+# Content
 
 ![[GeneticsNotes/undergraduate/files/Data.xlsx]]
 ![[Presentation.pptx]]
+
+- [ ] build library
+	- [ ] EDTA library
+		- [x] test: chr1A
+		- [ ] stats: chr1A
+		- [x] application: chr1B, chr1C
+		- [ ] all chromosome
+		- [ ] all samples
+			- [ ] learn: .bam file
+				- [ ] maybe the same detecting insertion but short reads
+			- [ ] application
+	- [ ] PALMER: more detailed detection using third-generation long reads
+		- [x] learning
+		- [ ] application
+- [ ] population analysis
+	- [ ] what to do with .bam file
+	- [ ] analysis direction
+
 # TE detect
 
 用长reads，有空间位点的信息，可以直接检测
@@ -46,6 +64,8 @@ performance evaluation:
 
 评判标准：
 - of different TE
+
+
 
 ### CS existing library
 
@@ -109,8 +129,9 @@ analysis by perl code0
 
 ![[Pasted image 20240309220506.png]]
 
-首先测试软件的时间较长，单是chr1A的就跑了一周：
+#### test
 
+首先测试软件的时间较长，单是chr1A的就跑了一周：
 - 只测chr1A/B/D
 	- 也可以先做个比对，看有没有大的区别
 - 将染色体切开，切成不同段的，从而实现多线程（丢弃一部分的断点数据）
@@ -119,44 +140,61 @@ analysis by perl code0
 	- 将gap也就是fa中显示N的片段作为切割处
 		- cut_chr1A.sh
 
-测试chr1A1M，结果：
-- 线程：10
-- 时间：8min
-	- LTR: 1min
-- 问题：
-	- `Warning: LOC list chr1A1M.fa.mod.ltrTE.veryfalse is empty.`
-		- 是在`Identify LTR retrotransposon candidates from scratch.`时产生的
-	- `Species: others`：应当调节成小麦特定的检测方式
-		- 物种特定的curated library
-	- `-WARNING- Grid computing is not available because DRMAA not configured properly: Could not find drmaa library.  Please specify its full path using the environment variable DRMAA_LIBRARY_PATH`
-		- 配置问题：
-			- 是否安装DRMAA
-			- 如何配置
-	- `/data1/home/dazheng/miniconda3/envs/EDTA/lib/python3.6/site-packages/Bio/Seq.py:2338: BiopythonWarning: Partial codon, len(sequence) not a multiple of three. Explicitly trim the sequence or add trailing N before translation. This may become an error in future.  BiopythonWarning,`
-		- 可能是Partial condon本身的问题，其中说的N，或许对检测结果有影响
-	- `Unspecified/NA not found in the TE_SO database, it will not be used to rename sequences in the final annotation.`：无法找到的TE类型
-		- 总共有50条
-		- 是在导入`trep-db_complete_Rel-19.fasta`时发生的
-			- trep-db有4126条：其中也找不到`Unspecified/NA'
-		- TE_SO database：在TE_Sequence_Ontology.txt文件中，找到总共有记录的为87条
+chr1A1M：报错
+- `Warning: LOC list chr1A1M.fa.mod.ltrTE.veryfalse is empty.`
+	- 是在`Identify LTR retrotransposon candidates from scratch.`时产生的
+- `Species: others`：应当调节成小麦特定的检测方式
+	- 物种特定的curated library
+	- 还没有找到特定的数据库：之前找的那些
+- `-WARNING- Grid computing is not available because DRMAA not configured properly: Could not find drmaa library.  Please specify its full path using the environment variable DRMAA_LIBRARY_PATH`
+	- 配置问题：
+		- 是否安装DRMAA：**无需**
+		- 如何配置
+- `/data1/home/dazheng/miniconda3/envs/EDTA/lib/python3.6/site-packages/Bio/Seq.py:2338: BiopythonWarning: Partial codon, len(sequence) not a multiple of three. Explicitly trim the sequence or add trailing N before translation. This may become an error in future.  BiopythonWarning,`
+	- 可能是Partial condon本身的问题，其中说的N，或许对检测结果有影响
+- `Unspecified/NA not found in the TE_SO database, it will not be used to rename sequences in the final annotation.`：无法找到的TE类型
+	- 总共有50条
+	- 是在导入`trep-db_complete_Rel-19.fasta`时发生的
+		- trep-db有4126条：其中也找不到`Unspecified/NA'
+	- TE_SO database：在TE_Sequence_Ontology.txt文件中，找到总共有记录的为87条
+	- **无需顾忌，也可更新SO文件**
 
-测试chr1AN：
-- 切割后统计数据：
-	- 片段数：20243
-	- 平均长度：28932 << 1000000
-		- 如果将片段平均长度改到大概1000000，有200个片段
-		- 1M8min：$8\times200/60$，为27h，相比于原本7d也算是可以了
-- 线程：25
-- 时间：预估16h
-	- LTR: 2h
+chr1AN：切割
+- 片段数：20243
+- 平均长度：28932 << 1000000
+	- 如果将片段平均长度改到大概1000000，有200个片段
+	- 1M8min：$8\times200/60$，为27h，相比于原本7d也算是可以了
 
-测试chr1ANM：
-- 切割后统计数据：
-	- 片段数：242
-	- 平均长度：2.45M
-		- 1M8min：$8\times 2.5\times 242/60$，为80h
+chr1ANM：切割
+- 片段数：242
+- 平均长度：2.45M
+	- 1M8min：$8\times 2.5\times 242/60$，为80h
+
+#### analyses
+
+TE长度和
+
+
 
 ## library built (data 4)
+
+chr1B：15线程，3天
+- 
+
+chr1D：15线程，3天
+- 
+
+### 三代读段建库
+
+材料：三代long reads
+- 不同的小麦族基因组
+
+软件
+- PALMER
+
+群体分析
+- 学习对bam文件的操作方式：将一个分析方式做出来
+- 找到分析的目标
 
 # Population analysis
 
@@ -186,9 +224,12 @@ Vmap 2 数据包括：
 后面再学习，先将现在的工作做好
 
 load方面：主要参考郭亚龙，看插入
-	- 使用数据：
-		- 二代数据来扫：深度是否够，有一些难度
-		- V2数据
-		- 三代数据：建库，长reads能否建好
-	- 目前无法找到位置，剪切型的转座子无法做，更多是复制型的变化
-	- 转座子和RNA介导的甲基化过程，联系数据和机理
+- 使用数据：
+	- 二代数据来扫：深度是否够，有一些难度
+	- V2数据
+	- 三代数据：建库，长reads能否建好
+- 目前无法找到位置，剪切型的转座子无法做，更多是复制型的变化
+- 转座子和RNA介导的甲基化过程，联系数据和机理
+- adaptation
+	- expansion load
+	- Sweep + BayPass + no introgression
