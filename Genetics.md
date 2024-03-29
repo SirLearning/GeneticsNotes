@@ -182,4 +182,9 @@ Ka/Ks：在遗传学中，$K_a/K_s$或者$d_N/d_S$表示异义替换和同义替
 
 ## 变异有害性预测工具
 
-今天为大家分享的文章题为：changing fitness effects of mutations through long-term bacterial evolution
+## 分析
+
+Tajima's D
+
+# genetic and phenotypic variation
+
