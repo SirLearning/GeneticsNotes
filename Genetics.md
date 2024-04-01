@@ -186,5 +186,9 @@ Ka/Ks：在遗传学中，$K_a/K_s$或者$d_N/d_S$表示异义替换和同义替
 
 Tajima's D
 
+Cohens D
+
+inversion recovery
+
 # genetic and phenotypic variation
 
