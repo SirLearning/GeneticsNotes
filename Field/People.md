@@ -12,3 +12,8 @@ Jeffery Dangl: [Dangl Lab (University of North Carolina at Chapel Hill) (unc.edu
 Jonathan Jones: [The Sainsbury Laboratory | Jonathan Jones group (tsl.ac.uk)](https://www.tsl.ac.uk/our-work/scientific-groups/jonathan-jones-group)
 
 Detlef Weigel: [Weigelworld – Plant Biology, Developmental Genetics and Evolutionary Genomics](https://weigelworld.org/)
+
+## population genetics
+
+Brian Charlesworth & Deborah Charlesworth
+- Elements of Evolutionary Genetics
