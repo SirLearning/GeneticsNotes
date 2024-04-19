@@ -247,3 +247,5 @@ inversion recovery
 |     | curated_lib |    0.756717 |     |
 
 [iwgsc_refseqv1.0_TransposableElements_2017Mar13.gff3](https://urgi.versailles.inra.fr/download/iwgsc/IWGSC_RefSeq_Annotations/v1.0/) 
+
+C值悖论：基因组大小与它进化的复杂度之间没有严格的对应关系
