@@ -55,7 +55,7 @@
 	- 广义披碱草属 (Elymus)
 - 广义：
 
-动物界 *Animalia*
+动物界 *Animalia*：后生动物 *Metazoan*
 - 软体动物门 *Mollusca*
 	- 多板纲 *Polyplacophora*，又名石鳖纲 *Loricata*
 - 脊索动物门 *Chordata*
