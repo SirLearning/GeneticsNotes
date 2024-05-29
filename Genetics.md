@@ -164,6 +164,14 @@ polygene: a member of a group of non-epistatic genes that interact additively to
 
 germline and somatic: 生殖细胞、体细胞
 
+遗传漂变 (genetic drift)：由于任何一个个体的生存和繁殖都受到随机因素的影响，繁殖过程可视作一种抽样，子代携带的等位基因即是对亲代抽取的一种样本
+
+种群瓶颈 (population bottleneck)：种群数量由于突然的灾难所导致的死亡或不能生育造成减少50%以上或者数量级减少的事件，可能促成遗传漂变加剧（抽样）
+
+干扰因素 (confounder)：在统计学和因果关系中是指同时影响自变量和因变量，导致出现伪关系的一种变量
+
+效应子：病原可以改变宿主和提前感染过程分泌的蛋白质
+
 ## 公式
 
 Ka/Ks：在遗传学中，$K_a/K_s$或者$d_N/d_S$表示异义替换和同义替换之间的比例
@@ -193,58 +201,6 @@ Cohens D
 inversion recovery
 
 # genetic and phenotypic variation
-
-
-|     | method      | length (kb) |     |
-| :-- | :---------- | ----------: | --- |
-| DHH | CS          |     1.53196 |     |
-|     | EDTA        |    0.497018 |     |
-|     | curated_lib |       2.774 |     |
-| DTA | CS          |    0.911242 |     |
-|     | EDTA        |    0.348511 |     |
-|     | curated_lib |     1.57283 |     |
-| DTB | curated_lib |       0.079 |     |
-| DTC | CS          |     6.47395 |     |
-|     | EDTA        |     1.08784 |     |
-|     | curated_lib |     5.14234 |     |
-| DTH | CS')        |     1.52484 |     |
-|     | EDTA        |    0.445086 |     |
-|     | curated_lib |    0.826298 |     |
-| DTM | CS          |     1.39306 |     |
-|     | EDTA        |    0.411653 |     |
-|     | curated_lib |     1.36344 |     |
-| DTT | CS          |    0.346228 |     |
-|     | EDTA        |    0.286222 |     |
-|     | curated_lib |    0.121515 |     |
-| DTX | CS          |    0.772211 |     |
-|     | EDTA        |    0.270788 |     |
-|     | curated_lib |      0.3594 |     |
-| DXX | CS          |     1.32882 |     |
-|     | EDTA        |    0.249575 |     |
-|     | curated_lib |      0.2916 |     |
-| RIJ | EDTA        |    0.104387 |     |
-| RIL | EDTA        |    0.169385 |     |
-|     | curated_lib |      1.2724 |     |
-| RIR | EDTA        |      0.3532 |     |
-| RIX | CS          |     2.42233 |     |
-|     | EDTA        |    0.834582 |     |
-|     | curated_lib |     2.41813 |     |
-| RLC | CS          |      4.4004 |     |
-|     | EDTA        |     3.08747 |     |
-|     | curated_lib |     6.12439 |     |
-| RLG | CS          |      3.2436 |     |
-|     | EDTA        |     2.71678 |     |
-|     | curated_lib |     8.05441 |     |
-| RLX | CS          |     7.16983 |     |
-|     | EDTA        |     1.52754 |     |
-|     | curated_lib |      7.6901 |     |
-| RST | curated_lib |       0.181 |     |
-| RSX | EDTA        |    0.338899 |     |
-|     | curated_lib |    0.389667 |     |
-| SIX | CS          |    0.397476 |     |
-| XXX | CS          |     1.71635 |     |
-|     | EDTA        |    0.388739 |     |
-|     | curated_lib |    0.756717 |     |
 
 [iwgsc_refseqv1.0_TransposableElements_2017Mar13.gff3](https://urgi.versailles.inra.fr/download/iwgsc/IWGSC_RefSeq_Annotations/v1.0/) 
 

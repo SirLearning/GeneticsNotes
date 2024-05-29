@@ -25,6 +25,7 @@
 - accession: refers to plant/seed sample, variety or population held in a genebank or breeding program for conservation and use
 - 种质 (germplasm): refers to a set of genotypes that may be conserved or used
 	- synonymous with genetic resources
+- inbred line
 
 # 物种
 
@@ -78,3 +79,8 @@
 色藻界 *Chromista*
 - 淡色藻门 *Ochrophyta*
 	- 卵菌纲 *Oomycetes*
+
+# 基因组大小
+
+小麦：15.5Gb，组装后一些读段未知故14Gb
+人类：3.1Gb，ungapped为2.9Gb
