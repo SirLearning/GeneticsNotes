@@ -16,6 +16,7 @@
 	 - f. 变型 (form)，比如：*Hibiscus mutabilis* f. plenus 表示重瓣木芙蓉，plenus是变型加词，表示重复
 
 地方品种 (landrace)：指在当地中选育或演化形成的、适应当地自然条件文化环境的植物或动物
+栽培变种 (cultivar)
 
 植物检索表
 - 法国博物学家拉马克 (Lamarck)：二歧分类原则
