@@ -5,9 +5,7 @@ Maximum Likelihood Inference
 - likelihood function
 - find the $\theta$ that maxmum the $L(\theta)$
 
-# 期中考试
-
-## 陈华老师部分
+# 陈华老师部分
 
 #### ​**1. 哈迪-温伯格平衡（HW平衡）​**
 
@@ -755,3 +753,11 @@ UCSC Genome Browser的功能与适用场景
 - ​**Ensembl** 强于基因注释、家族演化和变异分析，适合理论驱动的假设验证。
 - ​**UCSC** 长于多维度数据可视化和保守性解析，支持探索性研究和复杂调控网络分析。  
     两者结合，可全面解析从序列演化到表型创新的生物学机制，如文档中提到的基因重复、水平转移和调控区演化。
+
+# 钱文峰老师部分
+
+钱老师PPT：
+- Class 1: https://prezi.com/view/O151s2egrPmGEpl4Esgs/
+- Class 2: https://prezi.com/view/nIZZgXUWbyyh8bu2vLK2/
+- Class 3: https://prezi.com/view/0R722VcUcqfQtlBMwfh9/
+- Class 4: https://prezi.com/view/E4WsNAFCorFqIFY5u4VQ/

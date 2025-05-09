@@ -1,3 +1,5 @@
+关联分析
+
 数量性状位点定位 (QTL mapping)
 - 起源：
 	- 孟德尔的遗传学实验
@@ -71,8 +73,10 @@ DNA重组
 - 分析数据准备：
 	- 等位基因长度
 
-# 群体遗传学
+# GWAS
 
-孟德尔遗传定律
+discover the gene loci
 
+# eQTL (expression quantitative trait Loci)
 
+to determine the exprssion of mRNA and protein

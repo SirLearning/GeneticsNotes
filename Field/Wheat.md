@@ -1,4 +1,24 @@
-# Wheat
+分子标记辅助选择育种：
+- 分子标记：KASP、CASP
+	- SNP、Indel
+- 杂交回交育种
+	- 一般育种回交不超过3次：DUS审定，防止品种过于单一
+		- 前景为具有特异基因的品种，背景为已有优异性状的品种
+	- Fielder：约15个个体就能成功转化
+- 小麦一年一生：需要春化（4℃-10℃）
+	- 调控基因：
+		- VRN
+		- FT：又被FLC和Co的复合物调节
+
+# 图位克隆和分子机理解析
+
+精细定位和候选基因克隆
+
+## 条锈病
+
+条锈菌(*Puccinia striiformis* f. sp. *tritici, Pst*)
+
+# Basic
 
 ## Phenotype
 
@@ -90,7 +110,3 @@ Models for the evolution of polyploid wheats
 	 - bacterial artificial chromosome (BAC)-by-BAC sequencing
 	 - single molecule real-time whole-genome shotgun sequencing
 	 - linked reads and optical mapping
-
-# Maize
-
-
