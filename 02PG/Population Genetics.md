@@ -1,4 +1,12 @@
 
+曼哈顿图是怎么做出来的，和一般GWAS有什么区别？是找特殊SDS相应的SNP吗
+
+SNP、rare allele、singleton 有什么区别？
+
+SDS相对于iHS有没有什么坏处？有没有可能综合起来用？
+
+result部分讲的时候可以根据摘要里面分成的几个点。
+
 # Migration
 
 Maximum Likelihood Inference
