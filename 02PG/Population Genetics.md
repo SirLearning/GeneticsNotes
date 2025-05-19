@@ -106,54 +106,6 @@ Wahlund's principle
 - ​重组相关变异：病毒通过重组获得新功能（如SARS-CoV-2的刺突蛋白RBM区域通过重组获得感染人类能力）。
 
 群体遗传与基因组数据分析
-- 二代测序（以Illumina为代表）​
-	- 优点：
-		1. ​高精度：单碱基错误率低（<0.1%），适合检测单核苷酸多态性（SNP）和小插入/缺失（Indel）。
-		2. ​高通量：单次运行可产生数十亿条短读长（如2×150 bp），成本低（每Gb约$0.01），适合大规模测序项目。
-		3. ​成熟技术：标准化分析流程完善，广泛应用于全基因组测序（WGS）、外显子组测序（WES）、转录组测序（RNA-seq）和表观遗传学（如ChIP-seq）。
-	- 缺点：
-		1. ​短读长（50-300 bp）​：难以跨越重复序列或复杂结构区域（如转座子、基因家族），导致基因组组装不完整（碎片化）。
-		2. ​PCR扩增偏差：扩增过程中可能引入GC含量偏好性误差，导致覆盖不均（如高GC或高AT区域漏检）。
-		3. ​无法解析复杂变异：对长串联重复、倒位、易位等结构变异（SV）检测能力有限。
-	- 典型应用：
-		- 临床诊断（癌症基因panel、遗传病筛查）、群体遗传学（GWAS）、微生物多样性分析。
-- 三代测序（以PacBio SMRT和Oxford Nanopore为例）​
-	- 优点：
-		1. ​超长读长（10 kb–100+ kb）​：直接跨越重复序列、复杂结构区域和基因组缺口，显著提升组装连续性（如人类T2T基因组N50达Mb级）。
-		2. ​无需PCR扩增：直接测序保留天然DNA甲基化信息（如5mC、6mA），支持表观遗传学分析。
-		3. ​解析复杂变异：精准检测结构变异（SV）、基因融合、转座子活性及全长转录本异构体（如选择性剪接）。
-		4. ​实时测序（Nanopore）​：便携式设备（如MinION）支持野外或临床现场快速测序（如病原体即时检测）。
-	- 缺点：
-		1. ​高原始错误率：
-		    - PacBio：原始错误率~10%，但通过HiFi模式（环形一致性测序）可降至<0.1%。
-		    - Nanopore：原始错误率5-15%，需依赖高覆盖或纠错算法（如Medaka）提升准确性。
-		2. ​成本较高：每Gb成本约$10-100（HiFi模式更贵），适合靶向测序或小型基因组。
-		3. ​数据分析复杂：需专用工具（如Canu、Flye组装）和高性能计算资源。
-	- 典型应用：
-		- 新物种基因组组装（如动植物、微生物）、癌症基因组结构变异解析、全长转录本测序（Iso-Seq）、宏基因组复杂群落分析。
-
-技术对比与互补策略
-
-| ​**指标**     | ​**二代测序**         | ​**三代测序**                      |
-| ----------- | ----------------- | ------------------------------ |
-| ​**读长**     | 短（50-300 bp）      | 长（10 kb–100+ kb）               |
-| ​**单碱基准确性** | >99.9%            | PacBio HiFi >99.9%；Nanopore需纠错 |
-| ​**通量/成本**  | 高通量、低成本（$0.01/Gb） | 低通量、高成本（$10–100/Gb）            |
-| ​**优势场景**   | SNP/Indel检测、群体测序  | 复杂基因组组装、结构变异解析                 |
-
-互补策略：
-1. ​混合组装（Hybrid Assembly）​：结合二代短读长（纠错）和三代长读长（骨架搭建），提升组装质量（如人类T2T基因组）。
-2. ​靶向富集测序：使用探针或CRISPR捕获目标区域，结合三代测序解析复杂变异（如癌症基因的融合事件）。
-
-最新进展
-1. ​PacBio HiFi：通过环形一致性测序（CCS）实现高精度长读长（10-25 kb，错误率<0.1%），接近二代测序水平。
-2. ​Nanopore自适应采样：实时选择目标序列测序（如病原体基因组），节省数据量并降低成本。
-3. ​单细胞+三代测序：解析单细胞水平的全长转录本和表观遗传异质性（如神经元多样性研究）。
-
-总结：
-- ​二代测序：适合高精度、低成本的大规模变异检测和成熟应用（如临床诊断）。
-- ​三代测序：在解析基因组复杂性（重复序列、结构变异）和全长转录本分析中不可替代。
-- ​未来趋势：两者结合（混合测序）将成为复杂基因组研究和精准医学的主流方案。
 
 ### 群体进化历史推断
 
@@ -251,15 +203,647 @@ Wahlund's principle
 
 # 进化遗传学
 
+## 遗传变异
+
 遗传变异的起源：基因型空间的塑造机制
 - 基础知识：中心法则、基因结构
+	- 遗传变异 (genetic variation)
+	- 突变 (mutation)
+		- 多数有害
+		- 固定到物种的有利突变为野生型 (wild-type)，即正常基因
+		- 频发突变 (recurrent mutation)：一个重复发生的特定突变
 - 基本类型：
+	- 小变异 (small-scale sequence variation, < 1Kbp)
+		- 核苷酸替代 (substitution)
+		- 单核苷酸多态 (SNP) / 点突变 (point mutation)：数量大、鉴定容易，研究很多
+			- 转换 (Transition)：在 purines/pyrimidines 内部
+			- 颠换 (Transversion)：在 purines/pyrimidines 之间
+			- 成簇SNP (cSNP)：修复错误导致，一次突变事件的结果
+			- 同义/沉默 (synonymous/silent)：编码区 24% 为同义突变
+				- 密码子中第三个位点 (摇摆位置/简并位点, wobble position)：70% 概率沉默
+				- 四倍简并位点
+			- 非同义/错义 (nonsynonymous/missense)
+			- 无义 (nonsense)
+		- 插入/删除 (indel, < 50bp)
+			- 常见于微卫星 (microsatellite) 区域
+			- 移码 (frame-disrupting) indels：最为有害，因而在群体内频率最低
+				- 补偿性突变 (compensatory mutation)
+				- 回复突变 (back mutation)
+	- 结构变异 (large-scale structural variation, > 1Kbp)：
+		- 重组导致的结构变异
+			- 不等交换 (unequal crossing over)
+				- 在一个重组产物上形成串联重复 (tandem duplicaiton)
+				- 另一个重组产物上产生缺失
+			- 非等位基因同源重组，导致三类结构变异
+				- 删除/复制
+				- 倒位
+			- 重组导致新单倍型：增加突变的输入
+				- 单倍型 (haplotype)：不同等位基因或不同突变的组合
+					- 异位互作 (epistatic interaction)
+		- 拷贝数变异 (copy number variation)
+			- 拷贝丢失 (Copy number loss)
+			- 拷贝获得 (Copy number gain)
+		- 重排 (Rearrangement)
+			- 易位 (Translocation)
+				- 非同源染色题联会
+			- 倒置/倒位 (Inversion)
+			- 单亲二体 (Segmental acquired uniparental disomy)：癌症生物学中称为 loss-of-heterozygosity (LOH)
+		- 转座子
+			- LTR：导致RNA水平的重复
+			- DNA转座子：导致DNA水平的基因重复
+		- 重组或复制出错导致的简单串联重复
+			- 不同基因组存在突变偏好
+			- 蛋白复合体基因：较少发生完整重复，因为共同的选择压力导致的剂量敏感
+		- 复杂结构变异 (complex SV)：复制错误导致，多个位点
+			- 一次突变事件同时带来了重复和删除
+	- numerical variation (whole chromosomes or genomes)
+		- 多倍化 (polyploidy)
+			- 导致全基因组扩增 (whole genome duplication, WGD)：植物中常见
+				- 2R假说：脊椎动物起源
+				- WGD导致适应性上升：面对选择压力改变
+			- 核型 (karyotype)：染色体数目、大小分布
+				- 快速演化
+				- 重复序列重组导致染色体融合
+		- 非整倍性 (aneuploidy)：唐氏综合征
 - 突变速率
 - 非典型突变：体细胞变异
+
+遗传变异的检测
+- 二代测序（以Illumina为代表）​
+	- 优点：
+		1. ​高精度：单碱基错误率低（<0.1%），适合检测单核苷酸多态性（SNP）和小插入/缺失（Indel）。
+		2. ​高通量：单次运行可产生数十亿条短读长（如2×150 bp），成本低（每Gb约$0.01），适合大规模测序项目。
+		3. ​成熟技术：标准化分析流程完善，广泛应用于全基因组测序（WGS）、外显子组测序（WES）、转录组测序（RNA-seq）和表观遗传学（如ChIP-seq）。
+	- 缺点：
+		1. ​短读长（50-300 bp）​：难以跨越重复序列或复杂结构区域（如转座子、基因家族），导致基因组组装不完整（碎片化）。
+		2. ​PCR扩增偏差：扩增过程中可能引入GC含量偏好性误差，导致覆盖不均（如高GC或高AT区域漏检）。
+		3. ​无法解析复杂变异：对长串联重复、倒位、易位等结构变异（SV）检测能力有限。
+	- 典型应用：
+		- 临床诊断（癌症基因panel、遗传病筛查）、群体遗传学（GWAS）、微生物多样性分析。
+- 三代测序（以PacBio SMRT和Oxford Nanopore为例）​
+	- 优点：
+		1. ​超长读长（10 kb–100+ kb）​：直接跨越重复序列、复杂结构区域和基因组缺口，显著提升组装连续性（如人类T2T基因组N50达Mb级）。
+		2. ​无需PCR扩增：直接测序保留天然DNA甲基化信息（如5mC、6mA），支持表观遗传学分析。
+		3. ​解析复杂变异：精准检测结构变异（SV）、基因融合、转座子活性及全长转录本异构体（如选择性剪接）。
+		4. ​实时测序（Nanopore）​：便携式设备（如MinION）支持野外或临床现场快速测序（如病原体即时检测）。
+	- 缺点：
+		1. ​高原始错误率：
+		    - PacBio：原始错误率~10%，但通过HiFi模式（环形一致性测序）可降至<0.1%。
+		    - Nanopore：原始错误率5-15%，需依赖高覆盖或纠错算法（如Medaka）提升准确性。
+		2. ​成本较高：每Gb成本约$10-100（HiFi模式更贵），适合靶向测序或小型基因组。
+		3. ​数据分析复杂：需专用工具（如Canu、Flye组装）和高性能计算资源。
+	- 典型应用：
+		- 新物种基因组组装（如动植物、微生物）、癌症基因组结构变异解析、全长转录本测序（Iso-Seq）、宏基因组复杂群落分析。
+
+技术对比与互补策略
+
+| ​**指标**     | ​**二代测序**         | ​**三代测序**                      |
+| ----------- | ----------------- | ------------------------------ |
+| ​**读长**     | 短（50-300 bp）      | 长（10 kb–100+ kb）               |
+| ​**单碱基准确性** | >99.9%            | PacBio HiFi >99.9%；Nanopore需纠错 |
+| ​**通量/成本**  | 高通量、低成本（$0.01/Gb） | 低通量、高成本（$10–100/Gb）            |
+| ​**优势场景**   | SNP/Indel检测、群体测序  | 复杂基因组组装、结构变异解析                 |
+
+互补策略：
+1. ​混合组装（Hybrid Assembly）​：结合二代短读长（纠错）和三代长读长（骨架搭建），提升组装质量（如人类T2T基因组）。
+2. ​靶向富集测序：使用探针或CRISPR捕获目标区域，结合三代测序解析复杂变异（如癌症基因的融合事件）。
+
+最新进展
+1. ​PacBio HiFi：通过环形一致性测序（CCS）实现高精度长读长（10-25 kb，错误率<0.1%），接近二代测序水平。
+2. ​Nanopore自适应采样：实时选择目标序列测序（如病原体基因组），节省数据量并降低成本。
+3. ​单细胞+三代测序：解析单细胞水平的全长转录本和表观遗传异质性（如神经元多样性研究）。
+
+总结：
+- ​二代测序：适合高精度、低成本的大规模变异检测和成熟应用（如临床诊断）。
+- ​三代测序：在解析基因组复杂性（重复序列、结构变异）和全长转录本分析中不可替代。
+- ​未来趋势：两者结合（混合测序）将成为复杂基因组研究和精准医学的主流方案。
+
+## 突变速率
+
+速率估计方法
+- 基于表型：但大部分表型变异都是多基因的 (polygenic)
+- 基于序列比较
+	- 新生儿与父母比较 (tiro study)
+		- 家系测序 (trio-sequencing)
+	- 突变速率=进化速率，中性理论
+	- 突变积累品系 (mutation accumulation, MA)：通过最小化自然选择的力量，让心法突变自由积累
+- 基于家系 (trio) 测序的突变速率估计逐渐增多
+
+不同类型突变的速率估计
+- 点突变速率和Indel：速率大抵在$10^{-9}-10^{-11}$之间，前者约是后者的10倍
+- CNV速率：大抵在$10^{-7}-10^{-5}$之间
+	- 也有工作估计CNV速率$10^{-6}-10^{-4}$之间
+	- 单位点发生频率很高，且可影响更多碱基
+
+新发突变适合度的分布 (fitness landscape)：大抵是有害或近中性
+- 经过实验的物种：荧光假单胞菌、酵母、果蝇
+- 影印接种法：突变（包含适应性突变）是随机发生的，而非环境诱导
+
+突变
+- 随机性：双重含义
+	- 无法预测哪个拷贝会经历突变，即无法精准预测
+	- 环境不会诱发适应性突变
+		- 但不同突变对环境的适应性不同，有害突变的概率远高于有益突变
+- 偏好性：随机性不意味着基因组中所有位置发生突变的机会均等
+	- C$\rightarrow$T突变偏好
+		- 点突变偏好：可为推断病毒未知的宿主提供参考信息
+		- CpG点突变偏好
+	- 微卫星序列的高indel突变率
+	- 串联复制的高重复率
+	- 复制滑移 (replication slippage)：改变微卫星重复个数的过程，突变率远高于每个碱基对的点突变率
+	- 突变偏好反映自然选择？
+		- 突变偏好与自然选择共同导致调控区的趋同进化
+	- Indels附近的点突变速率上升
+	- 差异较大的位置易积累更多突变 (Feedforward loop)
+		- 父母亲本杂合区间易于积累新的点突变或者indel
+	- 环境压力导致突变速率上升（特别是父系）
+		- 快速积累的证据显示环境压力可提升相关基因的突变率
+			- 转录诱导下的DNA修复 (Transcription coupled DNA-repair)
+		- 人类点突变速率估计
+			- 雄性驱动的演化 (Male driven evolution)：通过精子带入种群的新突变要多于通过卵子带入的突变
+			- 成簇SNP随母亲年龄增加不断增多
+		- 单细胞群体适应性进化多由新发突变驱动
+		- 对于多细胞物种而言，个体数目有限，突变积累较慢，选择更多的作用于先前存在的突变
+- 其他性质
+
+非典型变异
+- 体细胞突变 (Somatic mutation)：在癌症中普遍发生
+	- 染色体碎裂 (Chromothripsis) 导致了癌症的出现
+	- 非入侵性产检 (NIPT) 的兴起，检测唐氏综合症等疾病
+	- 每个人都是嵌合体 (mosaic)，发育中同样存在突变与选择
+	- 神经组细胞具有很高的点突变速率
+		- 脑发育过程中的体细胞转座依然有待研究
+	- 缺爱，导致转座子插入变多
+	- 生殖系突变可以被体细胞突变所补偿
+- 水平基因转移 (Horizontal gene transfer，HGT)：
+	- 演化中的重大水平基因转移事件
+	- 水平基因转移频繁发生，可以有功能后果
+	- 拉马克主义 (Lamarckism) 的复兴？获得性性状 (Acquired trait, use or disuse)
+- 表观变异：精子不仅仅是DNA的携带者，可介导表观遗传 (epigenetic inheritance)
+	- 高脂饮食的小鼠其后代易于肥胖，由tsRNA介导
 
 # 进化发育生物学
 
 进化和发育：表型空间的塑造机制与演化规律
+
+动物结构 (animal architecture)：现代的体态来自古代的设计 Modern Forms, Ancient Designs
+- Modularity: repeated parts
+	- 化石证据显示身体设计的模块化（宏观层面多个相似的器官）有着古远的历史
+	- 串行同源物（同一个体内经过重复但略微不同的发育过程而产生的相似但又有差别的身体结构）
+	- 现生生命也是类似的
+- Symmetry and polarity 对称性和极性
+
+## 发育遗传学初步
+
+Monsters, Mutants, and Master Genes：主控基因和大突变的稀有性
+- Natural variation of morphology
+	- 同源异形：数目改变，类型改变
+	- 达尔文式微小、渐进的进化为主；大的进化跃迁近乎不可能
+	- 有希望的魔鬼：指代推动发育的基因所发生的突变，有可能带来大的表型改变，从而驱动新物种的起源
+- Existence of master or toolkit genes (homeotic genes)
+	- 同源异形基因（homeotic）存在的证据
+	- Operon and switch (enhancers)
+	- 顺式调控元件 (cis-regulatory elements, CRE)为基因附件DNA上的调控序列，包含增强子(enhancer)、抑制子(silencer)等
+	- Hox genes shape the development of fruitfly
+		- Hox genes unite animal development
+		- 关键基因（master gene）如Hox在动物体系中指导了体态的发育
+	- Hedgehog is important for the cuticle development 关键基因Hedgehog对表皮的发育很重要
+		- Hedgehog as a demo case of biomedicine study
+		- Hedgehog对于生物医学研究的意义
+	- Tool kit gene classification
+		- 工具箱基因（tool kit）：指定身体形成和形态建构的核心基因，包含Hox等转录调控因素、激素及色素合成等基因
+		- The tool kit paradox and the origin of diversity
+			- 人类、大猩猩整体上同源DNA的一致性为98.5%左右；Indel，SV方面的差别更大。
+
+From E. coli to Elephants: All life forms are descended from a common ancestor
+- 中心法则：古老而保守的设计
+
+工具箱基因
+- Making Babies: 25,000 Genes, Some Assembly Required
+	- Fate is determined by the tool kit proteins 胚胎命运的指定
+	- Fine regulation via combinatory logic 多个转录因子对顺式元件的组合可实现高分辨率的调控
+	- Binding motif and combinatory power
+		- 转录因子的结合序列通常比较短，可调控多达上千个下游基因。
+		- 500个转录因子中任意两个的组合可能性数目惊人。
+		- 而人类基因组编码超过1000个转录因子，组合调控的复杂度更高。
+			- KRAB可能大多都调控转座子
+		- Making distinct wings via differential regulation of a tool kit gene, Ubx
+	- Developmental network
+		- 包含转录因子和顺式调控元件的局部环路互相连接，进而组成有层级的网络
+- The Dark Matter of the genome: Operating Instructions for the Tool Kit
+
+调控演化驱动形态演化
+- The Big Bang of Animal Evolution
+	- Simple animal form before Cambrian Explosion 寒武纪之前的动物体态相对简单
+	- Big bang of animal forms 寒武纪出现了各类体态
+	- Regulatory evolution drives the big bang
+		- Hox顺式调控元件的进化驱动了形态演化。
+		- 寒武纪地层化石多样性的大量增加可以解读为遗传上的可能性（Hox基因的数目已经比较多）与生态机会碰撞推动的形态演化的结果。
+		- The rapid diversification of animals in the early Cambrian is likely to have been the result of a complex interplay of biotic and abiotic processes
+- Little Bangs: Wings and Other Revolutionary Inventions 顺式调控进化的重要性（模块化，修补、多功能、冗余）
+	- Hox基因的数目多少决定体态的复杂性？
+		- 新结构和新体态的进化需要新的基因？
+		- 昆虫复杂体态的起源由Hox基因数目的增多来驱动
+	- Ancient origination of Hox genes
+		- Hox基因有着古远的起源(deep origin)，长期以来维持10个左右；
+		- 各种无脊椎动物的复杂体态与Hox基因的数目增多无关
+	- Shifting Hox expression in vertebrate evolution
+		- Hox (Hoxc6) 基因表达模式的演化推动了颈椎的演化
+	- Evolution of insect wing via genetic switches
+		- 顺式调控元件的进化驱动了Hox在不同物种间的重新指定，即鳃状结构减少并特化为鳞翅目的前后翅。
+- How the Butterfly Got Its Spots
+	- 形态演化的大趋势之一为特化：漫长的演化长河中，重复的单元数目变少，功能分化。
+	- Batesian mimicry：眼点对于蝴蝶具有重要的生态适应意义
+		- Distal-less gene switches：Distal-less是Hox之外的核心基因之一，其顺式元件的演化驱动了眼点的起源。
+		- In the eye of one taxpayer：科学发展过程的不确定性
+
+肤色与脑演化
+- Paint It Black
+	- Fitness of zebra coloration 斑马的条纹影响适合度
+	- Protein-level evolution of MC1R determines melanism in mammals and birds 黑皮质素受体的蛋白演化影响了哺乳动物和鸟类的肤色
+		- Pleiotropy of MC1R MC1R影响多个性状（整合/integration）
+- A beautiful Mind: The Making of Homo sapiens
+	- Brain evolution：
+		- 人脑与其他高等动物的脑无本质区别
+		- Does loss of MYH16 drive brain expansion?
+			- 另有文献报导MYH16的丢失发生在4-5百万年前，与化石显示的脑扩张发生的时间不符
+			- MYH16不是单纯的基因丢失，实际上它断裂（fission）为人特异的两个小蛋白，并受正选择压力的作用
+		- Does FOXP2 drive language origination?
+			- 文献报导两个氨基酸的改变可影响下游几十个目的基因！
+			- Foxp2并没有近期正向选择信号，但它对我们人类生物学依然是重要的
+
+生命演化的恢宏与壮美 Endless Forms Most Beautiful
+- Principles of evolutionary renovation 演化中创新的基本原则：
+	- 修补 (tinkering)：修补概念的最早提出
+		- 自然选择绝非工程师，没有蓝图，并不完美；
+		- preadaptation/exaptation，teleological ?
+	- 多功能 (multifunctionality)
+	- 冗余 (redundancy)
+	- 模块化 (modularity)
+- Evo Devo: a new revolution
+	- Evo Devo应作为一个更现代的综合进化论的支撑点
+		- On Descent with Modification (达尔文物种起源的论断之一)
+		- The Tools for Making the Kingdom Are Ancient 工具箱基因的古老起源
+		- 调控演化推动形态的演化
+		- 老基因的修补是革新的基础
+		- 种内进化和种间进化有共同基础
+	- Evo Devo and the teaching of Evolution 教授进化发育生物学的重要性
+	- Evo Devo and animal conservation，Evo Devo和保护生物学
+	- Voice from another Evo Devo big bull：Dr. Stern对进化与发育的互动做了更具体的描述
+
+调控演化：
+- Change of cis-regulatory element of the middle layer genes drive morphological evolution
+	- 网络中间层基因的调控演化更为重要，网络如何定义，中间层如何定义？
+- Cis-regulatory mutation wins in long-term morphological evolution
+	- 基因丢失突变更多影响短期进化中的表型演化，调控演化倾向于影响长期进化中的形态变化。
+
+## Evo Devo 1.5
+
+进化的两个层面：on genes and form
+
+物种之间胚胎
+- Species are more similar as embryos than as adults 物种之间胚胎发育的相似性
+	- Karl Ernst von Baer
+- Does ontogeny recapitulate phylogeny? 个体发生重现系统发生？
+	- 祖先的成体状态很少在后代个体发育中重现
+	- 后代不同发育阶段的发育速率经常与祖先不符（异时性）
+	- 后代需要与环境相符的适应性演化
+	- 末端添加 vs. 幼态持续
+
+进化中的发育规则 Developmental principles of evolutionary change
+- 个体特化 (individualization)
+	- 原始的鲸类和现代海豚
+	- Individualization and loss of individualization occurs via evolving genotype-phenotype map
+		- 分割 (parcellation)
+		- 整合 (integration)
+		- 基因型-表型映射的演化
+- 解关联 (dissociation)
+- 异时 (heterochrony): an evolutionary change in the timing or rate of developmental events.
+	- 祖先状态
+	- 过量生长
+	- 初期发育
+	- 加速生长：不同器官
+	- 幼态持续（卖萌）：蹼足
+- 异地 (heterotopy): changes in the cells or tissues in which gene action or other developmental events occur.
+	- 在两海胆近缘种中，表达Meso1的细胞不同
+	- 突变热点与自然选择共同导致调控区的趋同进化
+	- Distal-less gene switches
+		- Hox之外的核心基因之一的Distal-less的顺式元件的演化驱动了眼点的起源
+- 互作 (developmental interactions)
+- 阈值 (thresholds): complex dynamic systems (nonlinear properties). crossing a threshold, lead to discontinuous differences in other components.
+	- 脊椎动物体节分节“时钟”
+- 模式 (pattern formation): the process by which the spatial pattern of cellular differentiation is specified.
+- 弹性 (plasticity) Developmental plasticity and integration
+	- 系统整合 (integration)：演化优势
+		- Developmental integration 发育整合的意义：
+			- origination of a retrogene largely accounts for chondrodysplasia of dogs
+			- : origination of a retrogene largely accounts for height of dogs
+			- evolution of visual system 眼睛和视觉中枢的发育偶联
+	- 发育弹性
+	- Canalization 渠化：a measure of the ability of a population to produce the same phenotype regardless of variability of its environment or genotype
+		- C. H. Waddington (1957)
+		- Canalization buffers internal and external variance 渠化减少了表型变异，使得选择失去了作用对象
+		- 生物体系可缓冲突变 (buffer mutation)，环境压力改变时，缓冲体系丧失，突变得以释放
+- Hox
+	- Hox gene number evolves，Hox基因的扩增
+	- Significance of Hox for evolutionary biology
+		- hardly overstate the importance
+		- vertebrates and invertebrates
+		- conserved, as opposed to evolving
+	- Ancient origination of Hox genes
+		- Hox基因有着古远的起源 (deep origin)，长期以来维持10个左右；各种无脊椎动物的复杂体态与Hox基因的数目增多无关
+
+同源性 (homology)
+- homology vs. homoplasy
+	- 同源：来自共同祖先
+	- 一致性
+	- 类似，非同源相似
+	- 性状两次起源
+- 非同源相似变异：趋同进化、平行进化、进化逆转 (evolutionary reversal)
+- 发育同源：同源根据不同的上下文有不同的定义
+- 重复结构：模块化
+- Does biological homology exist?
+	- 演化上同源的器官或许有不同的发育或遗传的基础
+	- 非同源器官可共享同源的遗传基础
+	- 基因重复干扰了基因功能的映射关系
+- The concept of biological homology
+	- 生物学同源性状可定义为某特化的结构单元在个体进化中的建立和保守性
+	- 遗传层面的系统发生关系和形态发生未必对应；性状可以保守，而其遗传、发育的程序已经变化
+	- 征召 (recruited or co-opted) exaptation, tinkering
+- Phenotypic stasis vs. genetic changes
+	- 性状的保守性并不代表遗传层面的保守性：
+		- even-skipped (eve) 基因是一个“成对”规则的基因，在胚胎中表达形成七个条带，每隔一个体节形成一个条带。
+		- 所有5个物种的Even striped-2序列在黑腹果蝇中都驱动2，3，7条带的表达，但其上游的调控序列（增强子）在物种间差别极大。
+- Seemingly evolutionary stasis
+
+发育如何约束进化？
+- 未曾演化出现的可能表型，为何它们从未出现？为何有些性状难以演化出来？
+	- 遗传层面缺乏相应的变异
+	- 性状可能有害，净化选择压力将其淘汰
+	- 缺乏支撑该性状的发育基础
+	- 性状间的相互关联，导致某一性状难以自由演化
+- Genetic constraint & phylogenetic constraint
+	- 进化生物学和发育生物学曾长期分离
+	- 物理、功能乃至发育约束会导致一系列的后果
+		- 缺乏性状
+		- 某些演化方向更可能发生
+		- 共同的生态压力或发育约束皆可导致平行演化
+			- 趋同进化 vs. 平行进化：有时，趋同进化和平行进化并不细分
+		- 性状在种系历史的早期演化快，后期发育约束越来越大
+		- 演化速度下降
+		- 发育早期的改变会影响后期的发育程序，因而早期的演化速度下降
+	- 除正向自然选择与突变偏好外，发育约束应该也存在，使Pitx1调控区的改变成为为数不多的解决方案之一
+	- Absence of features
+		- 性状的整合（integration）导致缺乏相对独立的发育程序，因而蝴蝶不能发育出具备不同颜色的眼点
+	- Rule of Seven
+		- Hox基因的组合调控指导了哺乳动物颈椎的发育
+		- Hox基因的组合调控导致了相互约束，使脖子形状的演化依赖于某个特定椎节的变化，而不是像其它脊椎动物那样改变椎节的数目
+		- Shifting Hox expression in vertebrate evolution
+			- Hox (Hoxc6) 基因表达模式的演化推动了颈椎的演化
+	- 高原雪雀DTL基因非同义突变富集于WD40结构域之外的区域
+		- 与同义突变（中性背景）和低地生活的树麻雀相比，祖先与三个子代雪雀物种（adamsi, rufico, taczan）维持了同样的序列演化偏好，可能由于发育约束导致
+
+## 基因的获取和丧失
+
+when gene gain and gene loss occurs in the development
+- Gene content evolution are underappreciated partiallydue to the propaganda of Evo Devo. 
+- Integrative omicsdemonstrated the prevalence of gene gain/loss andtheir roles in phenotypic evolution, especially indevelopmental evolution.
+- 基因的起源、丢失也可以驱动发育的进化。
+- Terminology
+	- Synonyms: young gene, gene origination, gene gain or gene birth
+	- Synonyms: gene death, gene loss
+- 物种具有大量种系特异基因
+- 物种间的比较基因组可用于推断基因的起源年龄进而鉴定种系特异的基因
+	- 比较基因组和系统发育组揭示无颌类与有颌类脊椎动物只共享一轮全基因组重复 (1R) ，后继分别发生谱系特异的WGD (2R与CR)
+- Gene gain is prevalent
+- 直系同源（Ortholog），旁系同源（paralog）
+- Tinkering vs de novo
+	- 修补概念
+	- 相信修补论（tinkering）的Jacob认为蛋白的从头起源是不可能的
+- evolutionary renovation
+	- 演化中创新的基本原则：修补、多功能、冗余、模块化
+- 新蛋白编码基因可从头起源（de novo origination）
+	- 剪切结构（Splicing structure）
+- How evolution builds genes from scratch
+	- A trait may be difficult to be built from scratch. So it emerges by tinkering (from A to B). But for genes especially for relatively small genes encoding fewer than 200 or even fewer than 100 amino acids, they could emerge de novo
+	- XIST emerges via transformation
+		- 非编码RNA可来自丢失蛋白编码能力的假基因。如全基因组共线性比对显示X染色体失活调控基因XIST来自假基因化的Lnx3
+	- Pseudogene as miRNA sponge?
+		- 假基因在疾病状态（如癌症）中，更有可能发挥调控角色；
+		- 它们在正常的发育或生理过程中，较少执行功能
+	- Numerous loss-of-function (LoF) mutation could destroy one gene
+		- Less is more? （少即是多假说）
+		- 典型的人类个体基因组含有100个功能丢失突变（如破坏读码框的indel），绝大多数并没有显示正选择信号
+		- “少即是多”模型在植物体系更为可能？
+			- 与人相比，植物中的功能丢失突变（如破坏读码框的indel）更多地显示正选择信号，可能有生态适应的意义
+
+Mutational mechanism leading to gene gain and loss
+- Rate of gene gain
+- Various mechanism
+	- RNA水平的基因重复
+	- DNA水平的基因重复
+	- 非等位基因同源重组（non-allelic homologous recombination）可导致三类结构变异（Structural variation）
+	- LTR类型的逆转座子可导致RNA水平的重复，DNA转座子可以导致DNA水平的基因重复
+	- 外显子重排(exon shuffling)/基因融合
+		- 外显子重排概念提出的逻辑基础：
+			- 外显子可对应于独立功能域（domain）；
+			- 内含子区重复序列辅助下的重组可创造外显子的新组合
+		- 内部基因重复(internal duplication)导致的外显子洗牌与可变剪切
+			- 内部基因重复皆可导致可变剪切的出现，从而维持重复前的祖先转录本。
+			- Gilbert同时提出了外显子洗牌和可变剪切的概念；这两个概念实际上是紧密相关的。
+			- 类似的，基因重复与外显子洗牌传统上作为两个各自独立的机制；现在看起来，这两个机制也是紧密相关的。
+	- 水平基因转移频繁发生，可以有功能后果：唯一能合成胡萝卜素的动物
+	- Birth of monkey-king via gene fission 基因裂变通过基因重复和差别衰减实现
+- Gene loss
+	- Does loss of MYH16 drive brain expansion (continued)?
+		- MYH16不是单纯的基因丢失，实际上它断裂（fission）为人特异的两个小蛋白，并受正选择压力的作用
+
+Rapid birth followed by rapid death
+- New genes may die out in some lineages during a prolonged pre-preservation stage
+	- 果蝇中雄性年轻偏向基因富集于X染色体，后期逐渐丢失
+	- 哺乳动物体系结果类似：
+		- 多种模型如Faster-X假说、X染色体雌性化假说解释了X染色体编码的新雄性偏向基因的快速起源与快速丢失
+- 突变机制约束或推动重复基因的功能演化
+- All previous slides refer to small-scale mutations rather than whole genome/chromosome copy number change, change, which has special features (e.g. massive gene loss after duplication)
+
+Developmental evolution driven by gene gain and death
+- Method and application related with gene gain and loss
+	- OR（嗅觉受体）在灵长类的丢失：生物无用结构退化
+	- Inference of gene ages based on syntenic genomic alignment
+	- Detection of orthologs
+		- Ensembl pre-computed orthologous gene annotation
+		- UCSC提供了模式动物体系的全基因组共线性比对，从这些比对中，可提出各物种的编码区及非编码区的同源序列
+	- 用phylostratigraphy（基因的演化年龄分布）理解宏进化
+		- 不同功能的基因有不同的年龄分布，例如发育中的转录因子在寒武纪之前即已经起源。
+	- Ancient origination of Hox genes
+		- Hox基因有着古远的起源(deep origin)，长期以来维持10个左右；
+		- 各种无脊椎动物的复杂体态与Hox基因的数目增多无关
+	- 种系特征性发育阶段（phylotypic stage）表达的基因起源年龄最为古老
+		- phylotypic stage：隶属同一门的物种，胚胎发育中相互之间最像的阶段
+	- 物理、功能乃至发育约束会导致一系列的后果
+		- 发育早期的改变会影响后期的发育程序，因而早期的演化速度下降：应主要是phylotypic stage
+	- Species are more similar as embryos than as adults
+		- 物种之间胚胎发育的相似性：应主要是phylotypic stage
+	- 胚胎发育中期种系特征性发育阶段的存在由高度整合的多效性基因网络导致
+- New gene in fly development
+	- Genome-wide age dating in D.melanogaster
+	- New gene could be essential for Drosophila
+		- The essentiality of new genes may be caused by the co-evolution of the whole molecular network
+			- 新基因的出现伴随着新的调控原件（绝缘子）的起源
+			- 新基因此前并不存在，自然也谈不上对物种的重要性。但当它起源之后，逐渐整合进分子网络，引起整个系统的共进化 (coevolution)
+			- 因而当它们被敲除时，有可能引发系统性的崩溃，导致果蝇死亡
+- New gene in human brain development. Could new gene be also manifested in human development?
+	- Genome-wide age dating in human and mouse
+	- Human brain demonstrates an excess of new gene expression relative to mouse
+		- 各器官转录组中灵长类或啮齿类特异基因的比例分布
+	- Primate-specific genes are upregulated in mid-fetal brain
+		- 孕期12周到22周的新脑皮层中更多表达灵长类或人类特异的年轻基因
+		- 考虑到这一时期表达的基因出错易导致自闭症，这些基因对脑发育演化的重要性可能是比较大的
+	- 灵长类特异重复基因DDX11在胚胎期脑发育中上调
+	- 灵长类特异基因（primate-specific genes PSGs，含人类特异基因human-specific genes HSGs）有较大的功能后果
+	- 10个实验验证的驱动脑演化的人特异突变中新基因占了7个
+		- GenTree serves as a community resource of new gene origination
+	- 使我们强大的基因也有可能增加我们得病（特别是癌症）的几率
+		- 年轻基因大多来自基因重复，其基因组位点不稳定，在癌症中很容易扩增
+- Summary: new gene quickly invades into the developmental pathway of fly and mammals
+- How about other species? 新基因的起源是表型演化的推动力之一，不仅限于人和果蝇，对于其他物种体系（开花植物）也是同样
+	- Developmental integrity: origination of a retrogene largely accounts for the leg length variance in dog
+	- Duplicate genes contributed to development of evolution of early vertebrates
+		- Hox基因的扩增
+		- 功能基因组揭示全基因组重复所产生的新基因导致发育程序的改变
+			- 功能富集分析
+- How about other genes? 与编码基因相比，非编码基因（miRNA，lncRNA等）的起源速率更快，物种或种系特异的年轻基因的比例更高
+	- Duplicated pseudogenic HBBP1 plays human-specific essential role in red blood cell development.
+		- 该重复基因在小鼠中已丢失，在黑猩猩中不表达，但在人类的红细胞发育过程中高表达，并发挥不可缺少的功能
+	- Comparative omics revealed the generality of gene gain in evolution and the functional significance of new genes for fly development or human brain development. Thus, although there are deeply conserved tool kit genes, some of them may be quite young. Does it mean Evo-Devo is wrong?
+		- New gene origination can also minimize the pleiotropy
+			- Carrol之所以推崇顺式调控元件的演化，是因为这些元件模块化的设计使其本身的变化不影响其他调控元件的功能，最小化负向多效性（negative pleiotropy）；
+			- 但基因重复或新基因的起源同样不影响其他拷贝或其它基因的功能。
+		- Protein evolution vs. regulatory evolution
+			- 蛋白层面的进化与调控的进化在表型进化中的贡献均等
+		- The tool kit paradox and the origin of diversity
+			- 人类、大猩猩整体上同源DNA的一致性为98.5%左右；Indel，SV方面的差别更大
+
+遗传-发育-进化的统一
+- 负向多效性的多少是突变是否能够固定的核心
+
+Looking forward：生物学需要多个层面的研究
+
+# 分子进化
+
+进化生物学的时间尺度
+- 宏进化 (Macro-evolution)
+	- Focus: The differences between species Phylogenetics
+	- Fields:
+		- Systematics
+		- Molecular Evolution
+		- Comparative Genomics
+- 微进化 (Micro-evolution)
+	- Focus: The differences between individuals within a speciies
+	- Fields: Population Genetics
+
+## 数学基础
+
+分子进化
+- 概念：分子进化是指DNA、RNA和蛋白质等细胞分子在世代更替中序列组成发生改变的过程
+	- 该领域运用进化生物学与群体遗传学原理阐释这些变化的规律
+	- 分子进化是进化生物学的一个分支，专注于在DNA序列层面上研究进化变化
+- 核心研究议题包括：
+	- 单核苷酸突变的速率及其影响
+	- 中性进化与自然选择的作用
+	- 新基因的起源
+	- 复杂性状的遗传本质
+	- 物种形成的遗传基础
+	- 发育机制的进化
+	- 进化力量如何驱动基因组与表型变化
+- 研究内容包括：
+	- 序列变化的速率
+	- 适应性突变与中性突变的相对重要性
+	- 基因组结构的变化
+
+生物信息学：早期历史的很多研究都是围绕着序列比对：
+1. Margaret Dayhoff 于1978年定义了PAM (Point Accepted Mutation), 是一个20个氨基酸相互之间转变的替换矩阵（这里不赘述），这些研究推动后续的生物学信息学的快速发展。
+2. Needleman-Wunsch (1970), Smith-Waterman 算法(1981), BLAST (1990, David Lipman etc), BLAT (2002, Jim Kent) 等等.
+3. 随着基因组学，特别是人类基因组的测序，分子进化、基因组进化以及生物信息学做了深刻的融合。
+
+随机过程 (Stochastic processes)
+- 背景：随机变量是指随机事件的数量表现
+	- Exponential distribution
+		- 指数分布是刻画很多事件的很好的分布函数。例如银行柜台从上一个到下一个客户的等待时间，高速路上车子进入收费站的等待时间等
+		- λ，又叫intensity parameter, 刻画了指数分布的特征， λ越大，等待时间就越短
+		- Rate variation among sites
+			- 不同位点的进化速率不是很一样，我们用一个随机分布来刻画不同位点之间的进化速率的差别，我们一般使用gamma distribution
+	- Poisson process
+		- Formal definition of Poisson process需要一些数学的setup.
+		- 如果事件之间的等待时间都是指数分布(λ), 那记录事件数目随着时间累积的这个过程就是泊松过程
+		- 给定一个时间段，发生事件的数目是一个λ*τ的泊松分布
+- 定义：A stochastic orrandom process can be defined as a collection of random variables that is indexed by somemathematical set
+	- 很多时候是$t$，时间或者自然数
+	- 自然世界的很多现象都可以用随机过程来表征：例如每天的天气情况、某人的每天的血压等等
+- Stochastic processes on trees
+	- Gene genealogy and phylogeny
+
+离散和连续时间的马尔可夫链
+- 马尔可夫链（或马尔可夫过程）是一种随机模型，用于描述事件序列中每个事件发生的概率仅取决于前一个事件所处的状态
+	- 根据时间是离散还是连续，状态空间是否有限 (countable)，马尔科夫链有很多不同的类型
+	- 在序列演化里，我们状态空间一般都是有限空间(finite space)。
+		- 例如，我们在碱基层次，都是A/T/C/G, 在密码子层面就是61/64密码子
+	- 离散时间的马氏链
+		- transition probability matrix
+		- Chapman Kolmogorov Equation
+	- A few key concepts from MC
+		- Stationary distribution: The stationary distribution of a Markov chain describes the distribution of Xt after a sufficiently long time that the distribution of Xt does not change any longer.
+			- Estimating evolutionary distance/time
+		- Time reversibility
+
+序列演化的系列模型
+- Nucleotide substitution model
+	- 需要一个进化模型刻画碱基替换的过程
+	- 在分子进化里，我们使用马尔可夫链来刻画这一过程
+	- 每个位点被认为是独立演化的
+- 转移概率矩阵
+- 转移速率矩阵
+- JC69 model
+- Kimura 2 parameter model (1980)
+	- Estimating evolutionary distance/time
+- Other nucleotide models
+- Family of models
+
+## 检测适应性进化的统计学方法
+
+宏微观进化检测适应性进化的差别
+- 在群体遗传学（微进化）里，我们主要研究种群内部的差别，体现自然选择的footprint (印记）主要是频率和遗传多样性等指标，这些内容在前面的课程里，已经有了比较好的学习。
+- 在宏进化里，我们主要研究进化的结果，我们的主要的参数就是进化的速率（进化的数量)。 很多时候，我们需要找一个“putatively neutral segment”（近中性）的区段来比较我们的进化速率。我们从群体遗传学里知道，如果我们有适应性或者正选择的SNP, 这些位点会更快地固定下来，导致更高的进化速率
+
+突变的效应(fitness effect)和进化速率
+- The rate of evolution is a function of
+	- Mutation rate
+	- Selection intensity
+
+dN/dS or Ka/Ks ratio
+- Counting method
+	- Challenges with counting methods
+		- model dN/dS over a codon 密码子模型
+			- Codon based likelihood model
+			- Site models: Nested models
+				- Logistics with the computation
+				- Likelihood ratio test
+			- Branch and branch-site models
+			- human adaptation
+- Counting # of nonsyn/syn differences
+- Correct for multiple hits
+
+## 如何构建系统进化树
+
+建树方法：
+- 距离法
+	- UPGMA
+- 简约法
+	- 最大简约法 (maximum Parsimony)
+- 似然法/贝叶斯法 Likelihood method
+	- Likelihood of a tree
+	- Testing of trees
+	- Bootstrap resampling
 
 ### 3. 突变的速率、随机性及适合度分布
 
