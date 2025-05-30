@@ -30,6 +30,12 @@
 
 # 物种
 
+被子植物 angiosperm
+- 最大的三个家族
+	1. 菊科 Asteraceae
+	2. 兰科 Orchidaceae
+	3. 豆科 Fabaceae/Leguminosae (legume family)
+
 植物界 *Plantae*
 - 维管植物 *Tracheophyta*，被子植物 *Angiosperms*，真双子叶植物 *Eudicots*
 	- 蔷薇目 *Rosales*
@@ -135,3 +141,4 @@
 	- 表现型变异
 
 植物里面如果发现突然出现一个基因，其他近缘种都没有，要考虑是否有水平基因转移。
+
