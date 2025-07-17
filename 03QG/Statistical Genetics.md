@@ -80,3 +80,7 @@ discover the gene loci
 # eQTL (expression quantitative trait Loci)
 
 to determine the exprssion of mRNA and protein
+
+# 未来应用
+
+暗物质（非编码RNA）功能挖掘
